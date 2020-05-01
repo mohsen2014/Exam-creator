@@ -1,0 +1,41 @@
+{
+  "name": "gama",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon webpack/dev.server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "backbone": "^1.4.0",
+    "jquery": "^3.5.0",
+    "underscore": "^1.10.2",
+    "webpack": "^4.43.0",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-runtime": "^6.26.0",
+    "compression-webpack-plugin": "^3.1.0",
+    "css-loader": "^3.5.3",
+    "deepmerge": "^4.2.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.20.2",
+    "expose-loader": "^0.7.5",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^6.0.0",
+    "nodemon": "^2.0.3",
+    "style-loader": "^1.2.1",
+    "url-loader": "^4.1.0"
+  }
+}

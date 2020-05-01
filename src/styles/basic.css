@@ -1,0 +1,30 @@
+.wrapper{
+    padding: 5px;
+    margin: 0 auto;
+    height: 90vh;
+}
+.row{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+[class*="col-*"]{
+    flex-basis: 100%;
+}
+@media (min-width: 480px){
+    .col-2,.col-2-4{
+        flex-basis: 100%;
+        background-color: lightblue; 
+    }
+}
+@media (min-width: 768px){
+    .col-2,.col-2-4{
+        flex-basis: 49%;
+        background-color: lightblue; 
+    }
+    .col-4{
+        flex-basis: 100%;
+        background-color: lightblue; 
+    }
+}
