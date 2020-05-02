@@ -6,7 +6,7 @@ import QuestionsView from './questions';
 import QuestionCollection from '../models/questions.collection';
 import '../styles/reset.css';
 import '../styles/basic.css';
-
+import '../styles/loading.css';
 
 export default class Basic extends View {
   constructor({ el }) {
@@ -16,7 +16,7 @@ export default class Basic extends View {
     this.offset = 0;
     $(window).scroll(() => {
       if ($(window).scrollTop() === $(document).height() - $(window).height()) {
-        this.offset += 1;
+        this.offset += 20;
         this.fetchData(() => {
           this.questionViews.trigger('append:model', { models: this.qCollection.lastFetchedModles });
         });
@@ -39,6 +39,7 @@ export default class Basic extends View {
   }
 
   fetchData(callback) {
+    $('body').append('<div id="loader"></div>');
     this.qCollection.fetch({
       data: {
         api_key: 'eE35nUA2NhjjXW4fKgx7q8zbzRCptuwdB9rPmPNB',
@@ -47,6 +48,7 @@ export default class Basic extends View {
       type: 'POST',
       success() {
         callback();
+        $('#loader').remove();
       },
     });
   }

@@ -16,7 +16,7 @@ export default class Question extends View {
     this.on('append:model', this.appendToQuestions);
     this.listenTo(model, 'change',
       (selectedModel) => (selectedModel.get('selected') ? this.appendToSelected(selectedModel) : this.removeFromSelected(selectedModel)));
-    $('body').on('click', '.test-register', (e) => {
+    $('body').on('click', '.test-register', () => {
       console.log(self.regions.selected.model.toJSON());
     });
   }

@@ -7,6 +7,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    flex-basis: 100%;
 }
 
 #selected .card:nth-child(odd){
@@ -21,42 +22,89 @@ a{
     text-decoration: unset;
 }
 
-.test-register{
-    flex-basis: 49%;
-    /* justify-self: unset; */
-    height: 30px;
-    position: fixed;
-    top: 90vh;
-    left: 10px;
-    width: 49%;
-}
-
 [class*="col-*"]{
     flex-basis: 100%;
 }
-@media (max-width: 480px){
+.test-register{
+    margin: 0 auto;
+    position: fixed;
+    width: 50%;
+    left: 5px;
+    top: 5px;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
     .col-2,.col-2-4{
         flex-basis: 100%;
-    }
-    .col-0-2{
-        display: none;
-    }
-}
-@media (min-width: 768px){
-    .col-0-2{
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        width: 49%;
-        overflow-y: scroll;
-        height: 90vh;
-    }
-    .col-2,.col-2-4{
-        flex-basis: 49%;
-        /* background-color: lightblue;  */
     }
     .col-4{
         flex-basis: 100%;
-        /* background-color: lightblue;  */
+    }
+    #question{
+        margin-top: 40px;
+    }
+    .test-register{
+        width: 100%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .col-2,.col-2-4{
+        flex-basis: 100%;
+    }
+    .col-4{
+        flex-basis: 100%;
+    }
+    #question{
+        margin-top: 40px;
+    }
+    .test-register{
+        width: 100%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .col-2,.col-2-4{
+        flex-basis: 49%;
+    }   
+    .col-4{
+        flex-basis: 100%;
+    }
+    .col-0-2{
+        flex-basis: 49%;
+    }
+    #selected{
+        margin-top: 40px;
+    }
+    #question{
+        margin-top: 0px;
+    }
+    .test-register{
+        width: 50%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .col-2,.col-2-4{
+        flex-basis: 49%;
+    }   
+    .col-4{
+        flex-basis: 100%;
+    }
+    .col-0-2{
+        flex-basis: 49%;
+    }
+    #question{
+        margin-top: 0px;
+    }
+    #selected{
+        margin-top: 40px;
+    }
+    .test-register{
+        width: 50%;
     }
 }

@@ -102,11 +102,7 @@ small, .text_small {font-size: 0.833em;}
     background-color: #28a745;
     border-color: #28a745;
 }
-.btn-green:hover {
-    color: #fff;
-    background-color: #218838;
-    border-color: #1e7e34;
-}
+
 .btn-green:focus {
     color: #fff;
     background-color: #218838;
