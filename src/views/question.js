@@ -8,6 +8,9 @@ export default class Question extends View {
       tagName: 'div',
       model,
       className: 'row',
+      attributes: {
+        id: model.cid,
+      },
       events: {
         'click button': 'selectQuestion',
       },
