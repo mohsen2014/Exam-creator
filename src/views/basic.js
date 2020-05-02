@@ -42,7 +42,7 @@ export default class Basic extends View {
     $('body').append('<div id="loader"></div>');
     this.qCollection.fetch({
       data: {
-        api_key: 'eE35nUA2NhjjXW4fKgx7q8zbzRCptuwdB9rPmPNB',
+        api_key: '',
         offset: this.offset,
       },
       type: 'POST',
