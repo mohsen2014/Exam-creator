@@ -22,6 +22,12 @@ export default class Basic extends View {
         });
       }
     });
+
+    $('body').on('click', 'a', function onclick(e) {
+      e.preventDefault();
+      $('.collapse.show').removeClass('show');
+      $(this).closest('.row').find('.collapse').toggle('show');
+    });
   }
 
   renderQuestions() {
@@ -51,28 +57,3 @@ export default class Basic extends View {
     return this;
   }
 }
-
-
-// [
-//   new QuestionModel({
-//     id: '1',
-//     direction: 'd test',
-//     question: 'q test',
-//     answer_a: 'ans1',
-//     answer_b: 'ans2',
-//     answer_c: 'ans3',
-//     answer_d: 'ans4',
-//     true_answer: '1',
-//     selected: false,
-//   }), new QuestionModel({
-//     id: '2',
-//     direction: 'd test2',
-//     question: 'q test2',
-//     answer_a: 'ans12',
-//     answer_b: 'ans22',
-//     answer_c: 'ans32',
-//     answer_d: 'ans42',
-//     true_answer: '2',
-//     selected: false,
-//   }),
-// ]

@@ -15,17 +15,17 @@ html {font-size: 100%;} /*16px*/
 
 body {
   background-color: white;
-  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   line-height: 1.65;
   color: #333;
+  font-family: 'Yekan',sans-serif ;
 }
 
 p {margin-bottom: 1.15rem;}
 
 h1, h2, h3, h4, h5 {
-  margin: 2.75rem 0 1.05rem;
-  font-family: sans-serif;
+  margin: 0 0 10px;
+  font-family: 'Yekan';
   font-weight: 400;
   line-height: 1.15;
 }
@@ -41,6 +41,98 @@ h3 {font-size: 1.728em;}
 
 h4 {font-size: 1.44em;}
 
-h5 {font-size: 1.2em;}
+h5 {font-size: .75em;font-weight: bold;}
 
 small, .text_small {font-size: 0.833em;}
+
+.btn{
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+}
+
+.btn-blue{
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-red{
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+} 
+.btn-outline-blue {
+    color: #007bff;
+    border-color: #007bff;
+}
+.btn-outline-red {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+.btn-outline-red:hover {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+.btn-outline-blue:hover {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-green {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+.btn-green:hover {
+    color: #fff;
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+.btn-green:focus {
+    color: #fff;
+    background-color: #218838;
+    border-color: #1e7e34;
+    box-shadow: 0 0 0 0.2rem rgba(72,180,97,.5);
+}
+.btn-block {
+    display: block;
+    width: 100%;
+}
+.btn:disabled{
+  opacity: .65;
+}
+@font-face {
+    font-family: 'Yekan';
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan.eot?#iefix') format('embedded-opentype'),
+		 url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan.woff') format('woff'),
+		 url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan.ttf') format('truetype');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Yekan';
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan-Bold.eot');
+    src: url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan-Bold.eot?#iefix') format('embedded-opentype'),
+		 url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan-Bold.woff') format('woff'),
+		 url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan-Bold.ttf') format('truetype');
+    font-weight: bold;
+}

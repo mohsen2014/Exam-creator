@@ -2,6 +2,7 @@ import { View } from 'backbone';
 import $ from 'jquery';
 import QuestionView from './question';
 import QuestionCollection from '../models/questions.collection';
+import '../styles/accordion.css';
 
 export default class Question extends View {
   constructor({ model = [] }) {
@@ -11,9 +12,13 @@ export default class Question extends View {
       selected: { element: $('#selected'), model: new QuestionCollection() },
     };
     this.model = model;
+    const self = this;
     this.on('append:model', this.appendToQuestions);
     this.listenTo(model, 'change',
       (selectedModel) => (selectedModel.get('selected') ? this.appendToSelected(selectedModel) : this.removeFromSelected(selectedModel)));
+    $('body').on('click', '.test-register', (e) => {
+      console.log(self.regions.selected.model.toJSON());
+    });
   }
 
   appendToSelected(model) {
@@ -21,6 +26,16 @@ export default class Question extends View {
     this.mapModelToView([model], selectedRegion.element);
     selectedRegion.model.add(model);
     this.replaceView(model, $(`#question #${model.cid}`));
+    this.checkAndShowRegisterButton(selectedRegion.model);
+  }
+
+  checkAndShowRegisterButton(model) {
+    if (!model || !model.length) return;
+    if (model.length > 9) {
+      $('#test-register').removeAttr('disabled');
+    } else {
+      $('#test-register').attr({ disabled: true });
+    }
   }
 
   removeFromSelected(model) {
@@ -28,6 +43,7 @@ export default class Question extends View {
     selectedRegion.model.remove(model);
     this.replaceView(null, $(`#selected #${model.cid}`));
     this.replaceView(model, $(`#question #${model.cid}`));
+    this.checkAndShowRegisterButton(selectedRegion.model);
   }
 
   appendToQuestions({ models }) {

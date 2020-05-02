@@ -7,7 +7,7 @@ export default class Question extends View {
     super({
       tagName: 'div',
       model,
-      className: 'row',
+      className: 'row card',
       attributes: {
         id: model.cid,
       },
