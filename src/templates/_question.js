@@ -14,17 +14,18 @@ const $question = `
         </div>
         <div class="collapse">
             <div class="card-body text-padding">
-                <div class="row"><div class="col-12"><%=answer_a%></div></div>
-                <div class="row"><div class="col-12"><%=answer_b%></div></div>
-                <div class="row"><div class="col-12"><%=answer_c%></div></div>
-                <div class="row"><div class="col-12"><%=answer_d%></div></div>
+                <ul>
+                    <li><%=answer_a%></li>
+                    <li><%=answer_b%></li>
+                    <li><%=answer_c%></li>
+                    <li><%=answer_d%></li>
+                </ul>
             </div>
         </div>
     </div>
 `;
 
 const $selected = `
-    <div class="card">
         <div class="row">
             <div class="col-10">
                 <%=question%>
@@ -34,12 +35,13 @@ const $selected = `
             </div>
         </div>
         <div class="text-padding" >
-            <div class="row"><div class="col-12"><%=answer_a%></div></div>
-            <div class="row"><div class="col-12"><%=answer_b%></div></div>
-            <div class="row"><div class="col-12"><%=answer_c%></div></div>
-            <div class="row"><div class="col-12"><%=answer_d%></div></div>
+            <ul>
+                <li><%=answer_a%></li>
+                <li><%=answer_b%></li>
+                <li><%=answer_c%></li>
+                <li><%=answer_d%></li>
+            </ul>
         </div>
-    </div>
         
         `;
 export {

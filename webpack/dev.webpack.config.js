@@ -16,7 +16,7 @@ module.exports = {
   devtool: 'eval-source-map',
   entry: {
     main: [
-      'webpack-dev-server/client?http://192.168.1.34:80',
+      'webpack-dev-server/client?http://localhost:3000',
       'webpack/hot/only-dev-server',
       path.resolve('./src/index.js'),
     ],

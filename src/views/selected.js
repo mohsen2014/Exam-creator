@@ -7,6 +7,7 @@ export default class Selected extends View {
     super({
       tagName: 'div',
       model,
+      className: 'card',
       attributes: {
         id: model.cid,
       },

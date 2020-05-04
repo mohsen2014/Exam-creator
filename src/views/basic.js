@@ -16,16 +16,16 @@ export default class Basic extends View {
       self.onScrollEvent($(window).scrollTop());
     });
 
-    $('body').on({
-      touchmove(e) {
-        // console.log($('html').scrollTop());
-        self.onScrollEvent($('html').scrollTop());
-      },
-    });
+    // $('body').on({
+    //   touchmove(e) {
+    //     // console.log($('html').scrollTop());
+    //     self.onScrollEvent($('html').scrollTop());
+    //   },
+    // });
     $('body').on('click', 'a', function onclick(e) {
       e.preventDefault();
       $('.collapse.show').removeClass('show');
-      $(this).closest('.row').find('.collapse').toggle('show');
+      $(this).closest('.card').find('.collapse').toggleClass('show');
     });
   }
 
