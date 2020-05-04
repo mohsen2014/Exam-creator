@@ -15,8 +15,12 @@ export default class Basic extends View {
     $(window).scroll(() => {
       self.onScrollEvent($(window).scrollTop());
     });
-    $('boby').on('touchmove', function touchmove() {
-      self.onScrollEvent($(this).scrollTop());
+
+    $('body').on({
+      touchmove(e) {
+        // console.log($('html').scrollTop());
+        self.onScrollEvent($('html').scrollTop());
+      },
     });
     $('body').on('click', 'a', function onclick(e) {
       e.preventDefault();
@@ -26,7 +30,8 @@ export default class Basic extends View {
   }
 
   onScrollEvent(scrollTop) {
-    if (scrollTop === $(document).height() - $(window).height()) {
+    const scrollPosition = $(document).height() - $(window).height();
+    if (scrollTop + 20 >= scrollPosition) {
       this.offset += 20;
       this.fetchData(() => {
         this.questionViews.trigger('append:model', { models: this.qCollection.lastFetchedModles });

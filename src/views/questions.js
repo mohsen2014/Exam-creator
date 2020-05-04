@@ -33,7 +33,9 @@ export default class Question extends View {
     if (!model || !model.length) return;
     if (model.length > 9) {
       $('#test-register').removeAttr('disabled');
+      $('.ten-requierd').hide();
     } else {
+      $('.ten-requierd').show();
       $('#test-register').attr({ disabled: true });
     }
   }
