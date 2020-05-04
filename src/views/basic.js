@@ -31,7 +31,7 @@ export default class Basic extends View {
 
   onScrollEvent(scrollTop) {
     const scrollPosition = $(document).height() - $(window).height();
-    if (scrollTop + 20 >= scrollPosition) {
+    if (scrollTop === scrollPosition) {
       this.offset += 20;
       this.fetchData(() => {
         this.questionViews.trigger('append:model', { models: this.qCollection.lastFetchedModles });
