@@ -13,10 +13,10 @@ module.exports = {
   },
   mode: 'development',
   cache: true,
-  devtool: 'eval',
+  devtool: 'eval-source-map',
   entry: {
     main: [
-      'webpack-dev-server/client?http://localhost:3000',
+      'webpack-dev-server/client?http://192.168.1.34:80',
       'webpack/hot/only-dev-server',
       path.resolve('./src/index.js'),
     ],
@@ -52,8 +52,8 @@ module.exports = {
         test: /\.(ttf|eot)$/,
         loader: 'file-loader',
       }, {
-        test: /\.css$/,
-        loader: ['style-loader', 'css-loader'],
+        test: /\.s[ac]ss$/i,
+        loader: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },

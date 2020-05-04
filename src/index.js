@@ -1,9 +1,10 @@
 import $ from 'jquery';
 import BasicView from './views/basic';
+import './styles/index.scss';
 
 const Application = () => ({
   start: () => {
-    const $content = $('#content');
+    const $content = $('#root');
     new BasicView({ el: $content }).render();
   },
 });

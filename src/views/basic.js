@@ -4,9 +4,6 @@ import $ from 'jquery';
 import $template from '../templates/_basic';
 import QuestionsView from './questions';
 import QuestionCollection from '../models/questions.collection';
-import '../styles/reset.css';
-import '../styles/basic.css';
-import '../styles/loading.css';
 
 export default class Basic extends View {
   constructor({ el }) {
@@ -14,20 +11,27 @@ export default class Basic extends View {
     this.$el = el;
     this.template = _.template($template);
     this.offset = 0;
+    const self = this;
     $(window).scroll(() => {
-      if ($(window).scrollTop() === $(document).height() - $(window).height()) {
-        this.offset += 20;
-        this.fetchData(() => {
-          this.questionViews.trigger('append:model', { models: this.qCollection.lastFetchedModles });
-        });
-      }
+      self.onScrollEvent($(window).scrollTop());
     });
-
+    $('boby').on('touchmove', function touchmove() {
+      self.onScrollEvent($(this).scrollTop());
+    });
     $('body').on('click', 'a', function onclick(e) {
       e.preventDefault();
       $('.collapse.show').removeClass('show');
       $(this).closest('.row').find('.collapse').toggle('show');
     });
+  }
+
+  onScrollEvent(scrollTop) {
+    if (scrollTop === $(document).height() - $(window).height()) {
+      this.offset += 20;
+      this.fetchData(() => {
+        this.questionViews.trigger('append:model', { models: this.qCollection.lastFetchedModles });
+      });
+    }
   }
 
   renderQuestions() {
@@ -42,7 +46,7 @@ export default class Basic extends View {
     $('body').append('<div id="loader"></div>');
     this.qCollection.fetch({
       data: {
-        api_key: '',
+        api_key: 'eE35nUA2NhjjXW4fKgx7q8zbzRCptuwdB9rPmPNB',
         offset: this.offset,
       },
       type: 'POST',

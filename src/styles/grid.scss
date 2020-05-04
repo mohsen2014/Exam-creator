@@ -1,0 +1,56 @@
+@use "sass:map";
+
+@import 'breakpoints.scss';
+@import 'mixins/grid';
+@import 'utils/variables';
+
+
+$gutter: 8px;
+$default-grid-gutter: 2%;
+$default-grid-columns: 12;
+
+@each $device,$mappy in $mappy-queries {
+    @include mappy-query($device){
+        .container{
+            max-width: map.get($max-height,$device) ;
+            margin: 0 auto;
+        }
+    }
+}
+
+.row{
+    @include grid($display: flex, $flex-direction: row, $flex-wrap: wrap)
+}
+
+$cols:(
+    col-2: 2,
+    col-4: 4,
+    col-6: 6,
+    col-8: 8,
+    col-10: 10,
+    col-12: 12,
+
+);
+
+@each $col,$col-size in $cols {
+    @each $device,$mappy in $mappy-queries {
+        @include mappy-query($device){
+            .#{$device}-col-#{$col-size} {
+                @include grid-col($col-size);
+            }        
+        }
+    }
+}
+
+@each $device,$mappy in $mappy-queries {
+    @include mappy-query($device){
+        .show-in-#{$device} {
+            display: inline-block;
+        }
+        .hide-in-#{$device} {
+            display: none !important;
+        }
+    }
+}
+
+

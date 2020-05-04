@@ -1,13 +1,12 @@
 import { View } from 'backbone';
 import _ from 'underscore';
-import { $question } from '../templates/_question';
+import { $selected } from '../templates/_question';
 
-export default class Question extends View {
+export default class Selected extends View {
   constructor({ model }) {
     super({
       tagName: 'div',
       model,
-      className: 'row card',
       attributes: {
         id: model.cid,
       },
@@ -15,7 +14,7 @@ export default class Question extends View {
         'click button': 'selectQuestion',
       },
     });
-    this.template = _.template($question);
+    this.template = _.template($selected);
     this.events = {
       'click:button': 'selectQuestion',
     };

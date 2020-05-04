@@ -1,0 +1,22 @@
+@use "sass:map";
+
+$breakpoints: (
+  small: 576px,
+  Medium: 768px,
+  large: 992px,
+  xlarge: 1200px
+);
+
+$mappy-queries: (
+  phone: mappy-bp(max-width small), // media all and (max-height: 29.9375em)
+  phablet: mappy-bp(small Medium), // @media all and (min-width 30em) and (max-width: 49.375em)
+  tablet: mappy-bp(Medium large), // @media all and (min-width 30em) and (max-width: 49.375em)
+  desktop: mappy-bp(large), // media all and (min-width: 60em) and (max-width: 74.9375em)
+);
+
+$max-height:(
+    phone: map.get($breakpoints ,small),
+    phablet: map.get($breakpoints ,medium),
+    tablet: map.get($breakpoints ,large),
+    desktop: map.get($breakpoints ,xlarge),
+);

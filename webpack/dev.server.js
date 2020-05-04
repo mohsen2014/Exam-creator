@@ -6,6 +6,8 @@ new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true,
   historyApiFallback: true,
+  port: 80,
+  host: '192.168.1.34',
   stats: {
     colors: true,
     exclude: [
@@ -14,7 +16,7 @@ new WebpackDevServer(webpack(config), {
       /hot/,
     ],
   },
-}).listen(3000, 'localhost', (err) => {
+}).listen(80, '192.168.1.34', (err) => {
   if (err) {
     console.log(err);
   }
