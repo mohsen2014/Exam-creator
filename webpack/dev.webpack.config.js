@@ -1,5 +1,6 @@
 
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -63,5 +64,9 @@ module.exports = {
       debug: true,
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: './index.html',
+    }),
   ],
 };

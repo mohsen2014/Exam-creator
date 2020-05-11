@@ -8,7 +8,7 @@ export default class Questions extends Collection {
     // this.set(props);
     // this.on('change:selected', this.onChange);
     this.on('add', this.onAdd);
-    this.url = 'https://gama.ir/webservice/azmoonTestsList';
+    this.url = 'http://localhost:3000/api';
   }
 
   parse(response) {
